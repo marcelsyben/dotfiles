@@ -11,3 +11,4 @@ yadm remote set-url origin git@github.com:marcelsyben/dotfiles.git
 chsh -s $(which zsh)
 zsh
 
+rm -rf .bash* .motd* .profile .sudo* .zcomp*
