@@ -6,3 +6,7 @@
 .local/share/yadm/repo.git
 .kuberlr
 .ssh
+.bash*
+.motd*
+.profile
+.sudo*

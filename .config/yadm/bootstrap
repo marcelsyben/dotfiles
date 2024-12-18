@@ -7,3 +7,7 @@ sudo apt-get install -y ansible zsh fzf eza tldr git htop
 
 yadm decrypt
 yadm remote set-url origin git@github.com:marcelsyben/dotfiles.git
+
+chsh -s $(which zsh)
+zsh
+
