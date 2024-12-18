@@ -1,0 +1,8 @@
+.vscode-server
+.gnupg
+.cache
+.zcomp*
+.zsh_history
+.local/share/yadm/repo.git
+.kuberlr
+.ssh
