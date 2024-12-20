@@ -10,3 +10,4 @@
 .motd*
 .profile
 .sudo*
+.wget-hsts

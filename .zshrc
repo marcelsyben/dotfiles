@@ -14,6 +14,7 @@ HIST_STAMPS="yyyy-mm-dd"
 
 plugins=(
     git
+    zsh-syntax-highlighting
 )
 
 zstyle ':omz:update' mode auto
