@@ -1,6 +1,6 @@
 #!/bin/bash
 
-
+set -x
 # Update package database
 pacman -Sy
 
@@ -12,6 +12,7 @@ pacman -S --needed --noconfirm \
     wget \
     base-devel \
     zsh \
+    yadm
     
 
 # Create user if it doesn't exist
@@ -25,9 +26,11 @@ echo "marcel ALL=(ALL) NOPASSWD: ALL" | sudo tee /etc/sudoers.d/marcel
 echo "Passwordless sudo configured for marcel"
 
 # Switch to user marcel for the rest of the script
-sudo -u marcel bash
+sudo -u marcel bash << 'EOF'
 cd ~
 
 git clone https://aur.archlinux.org/yay.git /tmp/yay
 (cd /tmp/yay && makepkg -si --noconfirm)
 rm -rf /tmp/yay
+
+yadm clone https://github.com/marcelsyben/dotfiles
