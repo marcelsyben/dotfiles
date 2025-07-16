@@ -34,3 +34,19 @@ git clone https://aur.archlinux.org/yay.git /tmp/yay
 rm -rf /tmp/yay
 
 yadm clone https://github.com/marcelsyben/dotfiles
+
+# Copy SSH keys from WSL host
+mkdir -p ~/.ssh
+cp /mnt/c/Users/Administrator/.ssh/id_* ~/.ssh/ 2>/dev/null || true
+# Set proper permissions for SSH keys
+chmod 700 ~/.ssh
+chmod 600 ~/.ssh/id_* 2>/dev/null || true
+chmod 644 ~/.ssh/id_*.pub 2>/dev/null || true
+
+# Setup basic git config
+git config --global user.name "Marcel Syben"
+git config --global user.email "marcel@syben.net"
+# Configure git to sign commits with SSH key
+git config --global gpg.format ssh
+git config --global user.signingkey ~/.ssh/id_rsa.pub
+git config --global commit.gpgsign true
